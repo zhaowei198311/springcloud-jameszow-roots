@@ -18,5 +18,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface FeignExecueCommonService {
 
     @RequestMapping(value = "/hi")
-    public String hi(@RequestParam(value = "name") String name);
+    String hi(@RequestParam(value = "name") String name);
 }
