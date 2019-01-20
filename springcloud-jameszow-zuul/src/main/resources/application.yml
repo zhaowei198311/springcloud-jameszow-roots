@@ -1,0 +1,26 @@
+server:
+  port: 8769
+
+spring:
+  application:
+    name: spring-cloud-zuul
+
+#注册中心指向start
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8888/eureka/
+#注册中心指向end
+
+#zuul配置
+zuul:
+  routes:
+    servicezull-a:
+      path: /servicezull-a/**
+      serviceId: spring-cloud-common
+    servicezull-b:
+      path: /servicezull-b/**
+      serviceId: spring-cloud-ribbon
+    servicezull-c:
+      path: /servicezull-c/**
+      serviceId: spring-cloud-feign
